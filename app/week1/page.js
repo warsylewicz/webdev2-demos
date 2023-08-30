@@ -3,7 +3,7 @@ export default function Week1() {
     <main>
       <h1>Week 1 Demo</h1>
       <p>
-        Congratulations on correctly setting up your development environment!
+        Congratulations on correctly setting up your development environment!!
       </p>
     </main>
   );
