@@ -1,7 +1,7 @@
 import EventList from "./EventList.js";
 import Link from "next/link";
 
-export default function Week2() {
+export default function Page() {
   return (
     <main>
       <h1>Community Event Planner</h1>
