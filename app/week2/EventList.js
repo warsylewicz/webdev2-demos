@@ -20,7 +20,7 @@ export default function EventList() {
       </div>
 
       <div>
-        <h2>New Year's Eve Concert</h2>
+        <h2>New Year&apos;s Eve Concert</h2>
         <p>Date: December 31, 2023</p>
         <p>Location: Downtown Plaza</p>
       </div>
