@@ -1,4 +1,4 @@
-import EventList from "./EventList.js";
+import EventList from "./event-list";
 import Link from "next/link";
 
 export default function Page() {
@@ -16,7 +16,6 @@ export default function Page() {
         </p>
         <p>
           <Link href="../">Home</Link>
-          {/* Link is a component that wraps an <a> tag. Here, we link to the parent path. */}
           {/* The advantage over using <a> is that Link provides prefetching and client-side navigation. */}
         </p>
       </div>
