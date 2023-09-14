@@ -8,7 +8,7 @@ export default function EventList() {
       </div>
 
       <div>
-        <h2>Charity Fun Run</h2>
+        <h2>Charity Fun Run!!</h2>
         <p>Date: October 15, 2023</p>
         <p>Location: City Sports Complex</p>
       </div>
