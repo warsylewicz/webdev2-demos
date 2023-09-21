@@ -18,9 +18,14 @@ export default function NewEvent() {
       location,
       description,
     };
-
     console.log(newEvent);
+
     setEventCreated(true);
+
+    setName("");
+    setDate("");
+    setLocation("");
+    setDescription("");
   };
 
   const handleNameChange = (event) => {
@@ -57,6 +62,7 @@ export default function NewEvent() {
               <input
                 required
                 onChange={handleNameChange}
+                value={name}
                 className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
               />
             </label>
@@ -67,6 +73,7 @@ export default function NewEvent() {
                 type="date"
                 required
                 onChange={handleDateChange}
+                value={date}
                 className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
               />
             </label>
@@ -76,6 +83,7 @@ export default function NewEvent() {
               <input
                 required
                 onChange={handleLocationChange}
+                value={location}
                 className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
               />
             </label>
@@ -85,6 +93,7 @@ export default function NewEvent() {
               <textarea
                 required
                 onChange={handleDescriptionChange}
+                value={description}
                 className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
                 rows="3"
               />
