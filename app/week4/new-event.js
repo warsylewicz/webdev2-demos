@@ -26,6 +26,8 @@ export default function NewEvent() {
     setDate("");
     setLocation("");
     setDescription("");
+
+    setEventCreated(false);
   };
 
   const handleNameChange = (event) => {
