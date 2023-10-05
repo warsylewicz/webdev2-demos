@@ -34,7 +34,7 @@ export default function EventList({ events }) {
           id="location"
           value={locationFilter}
           onChange={(e) => setLocationFilter(e.target.value)}
-          className="bg-sky-950 text-white p-2 font-sans"
+          className="bg-blue-950 text-white p-2 font-sans"
         >
           <option value="All">All</option>
           {locations.map((location) => (

@@ -29,7 +29,7 @@ export default function Page() {
       <h1 className="text-4xl font-bold m-6 text-center text-yellow-300">
         Community Events
       </h1>
-      <div class="fixed right-16 bottom-16">
+      <div className="fixed right-16 bottom-16">
         <button
           className="bg-yellow-500 hover:bg-yellow-300 text-blue-900 font-bold py-2 px-2 rounded-full w-24 h-24 flex items-center justify-center"
           onClick={() => setNewEventOpen(true)}
@@ -39,12 +39,12 @@ export default function Page() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            class="h-8 w-8"
+            className="h-8 w-8"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M12 4v16m8-8H4"
             ></path>
           </svg>
