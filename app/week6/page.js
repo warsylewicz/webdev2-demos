@@ -31,7 +31,7 @@ export default function Page() {
       </h1>
       <div className="fixed right-16 bottom-16">
         <button
-          className="bg-yellow-500 hover:bg-yellow-300 text-blue-900 font-bold py-2 px-2 rounded-full w-24 h-24 flex items-center justify-center"
+          className="bg-yellow-500 hover:bg-yellow-300 text-blue-900 font-bold py-2 px-2 rounded-full w-20 h-20 flex items-center justify-center"
           onClick={() => setNewEventOpen(true)}
         >
           <svg
