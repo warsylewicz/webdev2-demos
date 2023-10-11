@@ -24,7 +24,7 @@ function RandomDogImage() {
     <div>
       {dogImage ? (
         <div>
-          <h2>Here's a random dog image for you:</h2>
+          <h2>Here&apos;s a random dog image for you:</h2>
           <img src={dogImage} alt="A random dog" />
         </div>
       ) : (
