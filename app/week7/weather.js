@@ -21,6 +21,10 @@ export default function Weather() {
         console.error(error);
       }
     })(); // <-- Invoke the anonymous function immediately
+
+    return () => {
+      // <-- Clean up any side effects
+    };
   }, []); // <-- Empty array: Run the effect only once after the initial render
 
   return (
