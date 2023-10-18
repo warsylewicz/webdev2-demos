@@ -6,7 +6,7 @@ import NewEvent from "./_components/new-event";
 import EventList from "./_components/event-list";
 import NewEventButton from "./_components/new-event-button";
 import Weather from "./_components/weather";
-import Login from "./_components/login";
+import SignIn from "./_components/sign-in";
 import { useUserAuth } from "./_utils/auth-context";
 
 export default function Page() {
@@ -35,7 +35,7 @@ export default function Page() {
       <h1 className="text-4xl font-bold m-6 text-center text-yellow-300">
         Community Events
       </h1>
-      <Login />
+      <SignIn />
       <Weather />
       {user && <NewEventButton onClick={() => setNewEventOpen(true)} />}
 
