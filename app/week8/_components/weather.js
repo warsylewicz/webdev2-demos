@@ -4,7 +4,7 @@ import Heading from "./heading";
 
 import { useState, useEffect } from "react";
 
-async function getWeather() {
+async function fetchWeatherData() {
   const response = await fetch(
     `https://api.open-meteo.com/v1/forecast?latitude=51.064&longitude=-114.08&current=temperature_2m,is_day,precipitation,rain,showers,snowfall,cloudcover&timezone=auto`
   );
@@ -15,24 +15,18 @@ async function getWeather() {
 export default function Weather() {
   const [weather, setWeather] = useState(null);
 
-  useEffect(() => {
-    // This is an IIFE (Immediately Invoked Function Expression)
-    (async () => {
-      try {
-        const data = await getWeather(); // <-- Try to fetch the data}
-        setWeather(data);
-      } catch (error) {
-        console.error(error);
-      }
-    })(); // <-- Invoke the anonymous function immediately
+  async function loadWeather() {
+    try {
+      const data = await fetchWeatherData();
+      setWeather(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
-    return () => {
-      // <-- Clean up any side effects, if necessary
-      // E.g. remove event listeners, cancel intervals or timeouts, etc.
-      // This function is called when the component is unmounted
-      // (i.e. when the user navigates away from the page)
-    };
-  }, []); // <-- Empty array: Run the effect only once after the initial render
+  useEffect(() => {
+    loadWeather();
+  }, []);
 
   // Destructure the data and rename
   const { temperature_2m: temp, cloudcover: cloudCover } =
