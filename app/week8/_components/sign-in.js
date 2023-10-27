@@ -9,6 +9,7 @@ export default function Login() {
   async function handleSignIn() {
     try {
       await gitHubSignIn();
+      console.log(user);
     } catch (error) {
       console.log(error);
     }
@@ -21,6 +22,8 @@ export default function Login() {
       console.log(error);
     }
   }
+
+  console.log(user);
 
   return (
     <div className="text-lg">
