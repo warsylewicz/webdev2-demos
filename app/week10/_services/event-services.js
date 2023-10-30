@@ -1,0 +1,72 @@
+import { db } from "../_utils/firebase"; // import Firebase config
+
+import {
+  collection,
+  addDoc,
+  getDoc,
+  onSnapshot,
+  query,
+  doc,
+} from "firebase/firestore";
+
+// Function to listen for real-time updates on all events
+export const subscribeToEvents = (onUpdate) => {
+  try {
+    const q = query(collection(db, "events"));
+
+    return onSnapshot(q, (snapshot) => {
+      const events = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      // convert Firestore Timestamp to JS Date
+      events.forEach((event) => {
+        event.date = event.date.toDate();
+      });
+
+      onUpdate(events);
+    });
+  } catch (error) {
+    console.error("Error in subscribeToEvents: ", error);
+  }
+};
+
+// Get one event by id
+export const getEvent = async (id) => {
+  try {
+    const docRef = doc(db, "events", id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      const event = { id: docSnap.id, ...docSnap.data() };
+
+      // convert Firestore Timestamp to JS Date
+      event.date = event.date.toDate();
+
+      return event;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error("Error in getEvent: ", error);
+  }
+};
+
+// Add a new event
+export const addEvent = async (event) => {
+  try {
+    // Ensure the event object contains necessary fields before attempting to add to the collection
+    if (!event.name || !event.date || !event.location) {
+      throw new Error(
+        "The event object is missing required fields (name, date, or location)."
+      );
+    }
+
+    const eventCollection = collection(db, "events");
+    const docRef = await addDoc(eventCollection, event);
+    return docRef.id;
+  } catch (error) {
+    console.error("Error in addEvent:", error);
+  }
+};
