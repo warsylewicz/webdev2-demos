@@ -23,6 +23,7 @@ export const subscribeToEvents = (onUpdate) => {
       // convert Firestore Timestamp to JS Date
       events.forEach((event) => {
         event.date = event.date.toDate();
+        event.date.setDate(event.date.getDate() + 1); // terrible hack to fix timezone issue, better solution is to use moment.js
       });
 
       onUpdate(events);
@@ -41,9 +42,9 @@ export const getEvent = async (id) => {
     if (docSnap.exists()) {
       const event = { id: docSnap.id, ...docSnap.data() };
 
-      // convert Firestore Timestamp to JS Date
+      // convert Firestore Timestamp to JS Date and make sure it is MST
       event.date = event.date.toDate();
-
+      event.date.setDate(event.date.getDate() + 1); // terrible hack to fix timezone issue, better solution is to use moment.js
       return event;
     } else {
       return null;

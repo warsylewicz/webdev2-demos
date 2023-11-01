@@ -7,11 +7,12 @@ import { getEvent } from "../_services/event-services";
 export default function Page({ params }) {
   const [event, setEvent] = useState({});
 
+  const fetchEvent = async () => {
+    const event = await getEvent(params.id);
+    setEvent(event);
+  };
+
   useEffect(() => {
-    const fetchEvent = async () => {
-      const event = await getEvent(params.id);
-      setEvent(event);
-    };
     fetchEvent();
   }, [params.id]);
 

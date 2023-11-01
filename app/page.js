@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function Home() {
-  const weekDemos = [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13];
+  const weekDemos = [1, 2, 3, 4, 5, 6, 7, 8, 10];
   const doneUpTo = 10;
 
   return (
@@ -10,15 +10,11 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-5">Web Development 2 Demos</h1>
         <div className="text-lg">
           <ul>
-            {weekDemos.map((week) =>
-              week <= doneUpTo ? (
-                <li key={week} className="hover:text-green-400 hover:underline">
-                  <Link href={`/week${week}`}>Week {week} Demo</Link>
-                </li>
-              ) : (
-                <li key={week}>🚧 Week {week} Demo</li>
-              )
-            )}
+            {weekDemos.map((week) => (
+              <li key={week} className="hover:text-green-400 hover:underline">
+                <Link href={`/week${week}`}>Week {week} Demo</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
