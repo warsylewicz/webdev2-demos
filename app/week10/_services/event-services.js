@@ -7,14 +7,16 @@ import {
   onSnapshot,
   query,
   doc,
+  where,
 } from "firebase/firestore";
 
 // Function to listen for real-time updates on all events
 export const subscribeToEvents = (onUpdate) => {
   try {
-    const q = query(collection(db, "events"));
+    const colRef = collection(db, "events");
+    // const q = query(colRef, where("date", ">", new Date())); // only get events that have not yet occurred
 
-    return onSnapshot(q, (snapshot) => {
+    return onSnapshot(colRef, (snapshot) => {
       const events = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
