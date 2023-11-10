@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { getBlogPost } from "../_services/blog-service";
 
-export default async function Page({ params }) {
+export default function Page({ params }) {
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
 

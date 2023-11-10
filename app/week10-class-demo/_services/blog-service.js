@@ -5,6 +5,7 @@ import {
   addDoc,
   getDoc,
   getDocs,
+  setDoc,
   onSnapshot,
   query,
   doc,
@@ -53,5 +54,25 @@ export const addBlogPost = async (post) => {
     return docRef.id;
   } catch (error) {
     console.error("Error in addBlogPost: ", error);
+  }
+};
+
+// update a blog post
+export const updateBlogPost = async (id, post) => {
+  try {
+    const docRef = doc(db, "blog-posts", id);
+    await setDoc(docRef, post);
+  } catch (error) {
+    console.error("Error in updateBlogPost: ", error);
+  }
+};
+
+// delete a blog post
+export const deleteBlogPost = async (id) => {
+  try {
+    const docRef = doc(db, "blog-posts", id);
+    await deleteDoc(docRef);
+  } catch (error) {
+    console.error("Error in deleteBlogPost: ", error);
   }
 };
