@@ -3,7 +3,6 @@
 import { useState } from "react";
 import DogList from "./dog-list.js";
 import DogForm from "./dog-form.js";
-import Dog from "./dog.js";
 
 const dogsData = [
   { name: "Sparky", age: 2 },

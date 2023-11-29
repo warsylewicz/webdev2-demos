@@ -12,7 +12,7 @@ export default function Home() {
           <ul>
             {weekDemos.map((week) => (
               <li key={week} className="hover:text-green-400 hover:underline">
-                <Link href={`/week${week}`}>Week {week} Demo</Link>
+                <Link href={`/week-${week}`}>Week {week} Demo</Link>
               </li>
             ))}
           </ul>
