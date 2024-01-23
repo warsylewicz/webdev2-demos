@@ -21,7 +21,7 @@ export default function Page() {
 
   return (
     <main className="m-4">
-      <h1 className="text-4xl font-bold text-slate-300 text-slate-300 mb-3">
+      <h1 className="text-4xl font-bold text-slate-300 mb-3">
         My Favourite Dogs
       </h1>
       <Dog name={dog1.name} breed={dog1.breed} age={dog1.age} />
