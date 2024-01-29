@@ -1,0 +1,73 @@
+Type ".help" for more information.
+> 3+4;
+7
+> // functions
+undefined
+> function foo() {
+... return "foo":
+return "foo":
+            ^
+
+Uncaught SyntaxError: Unexpected token ':'
+> function foo() {
+... return "foo";
+... }
+undefined
+>
+>
+> foo()
+'foo'
+> function getOp(op) {
+... if (op === "add") return ( function (a,b) { return a + b; } );
+... if (op === "sub") return ( function (a,b) { return a - b; } ):
+if (op === "sub") return ( function (a,b) { return a - b; } ):
+                                                             ^
+
+Uncaught SyntaxError: Unexpected token ':'
+> function getOp(op) {
+... if (op === "add") return ( function (a,b) { return a + b; } );
+... if (op === "sub") return ( function (a,b) { return a - b; } );
+... }
+undefined
+> let myAdd = op("add");
+Uncaught ReferenceError: op is not defined
+> let myAdd = getOp("add");
+Uncaught SyntaxError: Identifier 'myAdd' has already been declared
+> let myAdd2 = getOp("add");
+undefined
+> myAdd2(3,4);
+7
+> let mySub = getOp("sub");
+undefined
+> mySub(4,3);
+1
+> function foo2() { return "foo"; }
+undefined
+> const arrowAdd = (a,b) => a + b;
+undefined
+> const arrowAddAlternate = (a,b) => { console.log(a); return a + b; }
+undefined
+> arrowAddAlternate(4,5);
+4
+9
+> arrowAdd(5,6);
+11
+> ( () => arrowAdd(3,4))();
+7
+> .exit
+
+
+&&
+
+function f1() {
+    console.log("f1");
+    return false;
+}
+
+function f2() {
+    console.log("f2");
+    return true;
+}
+
+f1() && f2();
+// only displays f1
