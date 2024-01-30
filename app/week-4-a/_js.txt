@@ -1,0 +1,73 @@
+PS C:\Users\aaron\Desktop\webdev2-demos> node
+Welcome to Node.js v18.17.1.
+Type ".help" for more information.
+> function add(a,b) {
+... return a + b;
+... }
+undefined
+> add(3,4);
+7
+> const addVar = function (a,b) {
+... return a + b;
+... }
+undefined
+> addVar(3,4);
+7
+> const addArrow = (a,b) => { return a + b; }
+undefined
+> const addArrowAbbrev = (a,b) => a + b;
+undefined
+> addArrowAbbrev(3,4);
+7
+>
+>
+>
+>
+> // higher order functions
+undefined
+> function getOp(op) {
+... if (op === "add") { return ( (a,b) => a + b ) }
+... if (op === "sub") { return ( (a,b) => a - b ) }
+... }
+undefined
+> const myAdd = getOp("add");
+undefined
+> myAdd(3,4);
+7
+> const myAdd2 = getOp("add");
+undefined
+> myAdd2(3,4);
+7
+> const mySub = getOp("sub");
+undefined
+> console.log( mySub(4,3) );
+1
+undefined
+> ( (a,b) => a * b )(3,4)
+12
+> const a = 4
+undefined
+> const b = 5
+undefined
+> ( (a,b) => a * b )(a,b);
+20
+> exit
+
+
+&& - and
+
+let a = false;
+let b = true;
+if (a && b) { console.log("a and b are true"); }
+else { console.log("a and b are not both true"); }
+
+let f1 = () => { console.log("f1"); return false; }
+let f2 = () => { console.log("f2"); return true; }
+
+if (f1() && f2()) { console.log("f1 and f2 are true"); }
+else { console.log("f1 and f2 are not both true"); }
+
+This displays:
+f1
+f1 and f2 are not both true
+because f2 is not called since f1 returns false
