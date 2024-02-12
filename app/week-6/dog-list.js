@@ -1,18 +1,21 @@
 import Dog from "./dog.js";
 
 export default function DogList({ dogs, onDelete }) {
-  function handleDelete(name) {
-    onDelete(name);
-  }
-
   return (
     <div>
-      <h1>Dogs</h1>
-      {dogs.map((dog, index) => (
-        <div key={index}>
-          <Dog name={dog.name} age={dog.age} onDelete={handleDelete} />
-        </div>
-      ))}
+      <h2>Dog List</h2>
+      <ul>
+        {dogs.map((dog) => (
+          <li key={dog.id}>
+            <Dog
+              id={dog.id}
+              name={dog.name}
+              age={dog.age}
+              onDelete={onDelete}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
