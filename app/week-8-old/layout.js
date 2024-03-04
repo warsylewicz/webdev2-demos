@@ -1,4 +1,4 @@
-import { AuthContextProvider } from "./_utils/auth-context";
+import { AuthContextProvider } from "./auth-context";
 
 const Layout = ({ children }) => {
   return <AuthContextProvider>{children}</AuthContextProvider>;

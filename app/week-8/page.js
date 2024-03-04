@@ -1,28 +1,21 @@
 "use client";
 
-import { useUserAuth } from "./auth-context";
+import { useUserAuth } from "./_utils/auth-context";
 
 export default function Page() {
   const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
 
-  const handleSignIn = () => {
-    gitHubSignIn();
-  };
-
-  const handleSignOut = () => {
-    firebaseSignOut();
-  };
+  console.log(user);
 
   return (
-    <main>
-      User: {user?.displayName}
-      <br />
+    <div>
+      {<h1>Welcome, {user?.displayName}</h1>}
+      <p>Your email is {user?.email}</p>
       {user ? (
-        <button onClick={handleSignOut}>Sign Out</button>
+        <button onClick={firebaseSignOut}>Sign Out</button>
       ) : (
-        <button onClick={handleSignIn}>Sign In</button>
+        <button onClick={gitHubSignIn}>Sign In with GitHub</button>
       )}
-      <div>{user && <p>protected info</p>} </div>
-    </main>
+    </div>
   );
 }
