@@ -6,14 +6,13 @@ export default function Page() {
   const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
 
   if (!user) {
-    return <div>Go away!</div>;
+    return <p>Go away!</p>;
   }
 
   return (
     <div>
-      <h1>Welcome, {user.displayName}</h1>
-      <p>Your email is {user.email}</p>
-      <button onClick={firebaseSignOut}>Sign Out</button>
+      <h1>Week 8</h1>
+      <p>Hi!</p>
     </div>
   );
 }

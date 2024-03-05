@@ -9,13 +9,17 @@ export default function Page() {
 
   return (
     <div>
-      {<h1>Welcome, {user?.displayName}</h1>}
-      <p>Your email is {user?.email}</p>
-      {user ? (
-        <button onClick={firebaseSignOut}>Sign Out</button>
-      ) : (
-        <button onClick={gitHubSignIn}>Sign In with GitHub</button>
-      )}
+      <h1>Week 8</h1>
+      <p>{user ? "Hi there!" : "Please sign in"}</p>
+      <p>{user?.email}</p>
+      {user && user.displayName}
+      <p>
+        {user ? (
+          <button onClick={firebaseSignOut}>Sign Out</button>
+        ) : (
+          <button onClick={gitHubSignIn}>Sign In with GitHub</button>
+        )}
+      </p>
     </div>
   );
 }
