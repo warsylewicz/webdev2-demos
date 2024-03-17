@@ -33,9 +33,14 @@ export const getBlogPost = async (id) => {
 export const getBlogPosts = async () => {
   try {
     const blogPostsCollectionRef = collection(db, "blog-posts");
-    // const blogPostsQuery = query(blogPostsCollectionRef);
-
     const blogPostsSnapshot = await getDocs(blogPostsCollectionRef);
+
+    // const blogPostsQuery = query(
+    //   blogPostsCollectionRef,
+    //   where("published", "==", true)
+    // );
+    // const blogPostsSnapshot = await getDocs(blogPostsQuery);
+
     const mappedBlogPosts = blogPostsSnapshot.docs.map((postDoc) => ({
       id: postDoc.id,
       ...postDoc.data(),

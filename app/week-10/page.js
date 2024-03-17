@@ -17,28 +17,20 @@ export default function Page() {
     fetchPosts();
   }, []);
 
-  const handleSignIn = () => {
-    gitHubSignIn();
-  };
-
-  const handleSignOut = () => {
-    firebaseSignOut();
-  };
-
   return (
     <main>
       User: {user?.displayName}
       <br />
       {user ? (
-        <button onClick={handleSignOut}>Sign Out</button>
+        <button onClick={firebaseSignOut}>Sign Out</button>
       ) : (
-        <button onClick={handleSignIn}>Sign In</button>
+        <button onClick={gitHubSignIn}>Sign In</button>
       )}
       <div>
         {posts &&
           posts.map((post) => (
             <div key={post.id} className="text-blue-300 hover:underline">
-              <Link href={`/week10-class-demo/${post.id}`}>{post.title}</Link>
+              <Link href={`/week-10/${post.id}`}>{post.title}</Link>
             </div>
           ))}
       </div>
