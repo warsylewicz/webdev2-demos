@@ -9,15 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "autoprefixer": "10.4.16",
-    "encoding": "^0.1.13",
-    "eslint": "8.52.0",
-    "eslint-config-next": "14.0.1",
-    "firebase": "^10.8.1",
-    "next": "14.0.1",
-    "postcss": "8.4.31",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.5"
+    "@neondatabase/serverless": "^0.9.3",
+    "autoprefixer": "latest",
+    "encoding": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "firebase": "latest",
+    "next": "latest",
+    "postcss": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.3"
   }
 }

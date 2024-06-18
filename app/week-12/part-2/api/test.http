@@ -1,0 +1,38 @@
+GET http://localhost:3000/week-11/part-2/api/users
+
+###
+
+GET http://localhost:3000/week-11/part-2/api/users/1
+
+###
+
+POST http://localhost:3000/week-11/part-2/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Carl",
+    "age": 25
+}
+
+###
+
+PUT http://localhost:3000/week-11/part-2/api/users/2 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Bobby",
+    "age": 31
+}
+
+###
+
+PATCH http://localhost:3000/week-11/part-2/api/users/2 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Bobby"
+}
+
+###
+
+DELETE http://localhost:3000/week-11/part-2/api/users/1 HTTP/1.1

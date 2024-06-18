@@ -1,0 +1,80 @@
+// Create tables
+POST http://localhost:3000/week-13/api/tables
+
+###
+
+// Create user
+POST http://localhost:3000/week-13/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "email": "abe@test.com",
+    "name": "Abe",
+    "age": 20,
+    "role": "admin"
+}
+
+###
+
+// Create user
+POST http://localhost:3000/week-13/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "email": "bob@test.com",
+    "name": "Bob",
+    "age": 30,
+    "role": "user"
+}
+
+###
+
+// Create user
+POST http://localhost:3000/week-13/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "email": "carl@test.com",
+    "name": "Carl",
+    "age": 25,
+    "role": "user"
+}
+
+###
+
+// Get users
+GET http://localhost:3000/week-13/api/users
+
+
+###
+
+// Get user by id
+GET http://localhost:3000/week-13/api/users/2
+
+###
+
+// Replace user by id
+PUT http://localhost:3000/week-13/api/users/2 HTTP/1.1
+content-type: application/json
+
+{
+    "email": "bobby@test.com",
+    "name": "Bobby",
+    "age": 31,
+    "role": "USER"
+}
+
+###
+
+// Delete user by id
+DELETE http://localhost:3000/week-13/api/users/2 HTTP/1.1
+
+###
+
+// Delete all users
+DELETE http://localhost:3000/week-13/api/users HTTP/1.1
+
+###
+
+// Drop all tables. You can use this to reset the database.
+DELETE http://localhost:3000/week-13/api/tables HTTP/1.1
