@@ -71,3 +71,4 @@ function f2() {
 
 f1() && f2();
 // only displays f1
+
