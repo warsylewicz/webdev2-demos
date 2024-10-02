@@ -2,8 +2,8 @@ import DogForm from "./dog-form.js";
 
 export default function Page() {
   return (
-    <main>
-      <h1>Week 4 Interactivity with Forms</h1>
+    <main className="m-4">
+      <h1 className="text-4xl m-2 bold">Week 5 Interactivity with Forms</h1>
       <DogForm />
     </main>
   );
