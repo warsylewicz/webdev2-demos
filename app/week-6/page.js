@@ -1,58 +1,51 @@
 "use client";
 
+import dogsJson from "./dogs.json"; // dogsJson is an array of objects
+import Image from "next/image";
+import { useState } from "react";
+
 export default function Page() {
-  const dogs = [
-    {
-      id: 1,
-      name: "Corgnelius",
-      breed: "Corgi",
-      imageUrl:
-        "https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&w=260&h=750&dpr=2",
-    },
-    {
-      id: 2,
-      name: "Sleepy",
-      breed: "Brittany",
-      imageUrl:
-        "https://images.pexels.com/photos/731022/pexels-photo-731022.jpeg?auto=compress&cs=tinysrgb&w=260&h=750&dpr=2",
-    },
-    {
-      id: 3,
-      name: "Smiley",
-      breed: "Cute",
-      imageUrl:
-        "https://images.pexels.com/photos/247937/pexels-photo-247937.jpeg?auto=compress&cs=tinysrgb&w=260&h=750&dpr=2",
-    },
-  ];
+  const [selectedDogId, setSelectedDogId] = useState(-1);
 
-  // sort the dogs by name
-  dogs.sort((a, b) => a.name.localeCompare(b.name));
-  dogs.sort((a, b) => {
-    if (a.name < b.name) return -1;
-    if (a.name > b.name) return 1;
-    return 0;
-  });
+  let dogs = [...dogsJson]; // shallow copy of dogsJson
+  dogs.sort((a, b) => a.name.localeCompare(b.name)); // sort by name
 
-  // do not show dog with id == 2
-  const filteredDogs = dogs.filter((dog) => dog.id !== 2);
-  console.log(filteredDogs);
+  dogs = dogs.filter((dog) => dog.name.length > 5); // filter by name length
 
   const handleClick = (id) => {
-    alert(id);
+    if (selectedDogId === id) {
+      setSelectedDogId(-1);
+      return;
+    }
+    setSelectedDogId(id);
   };
 
   return (
-    <div className="sm:bg-slate-500 md:bg-slate-200 bg-slate-600">
-      <h1>Week 5 Dog Demo</h1>
+    <main className="p-2">
+      <h1 className="text-2xl font-semibold">Week 6</h1>
+      <p>Current id: {selectedDogId}</p>
       <ul>
         {dogs.map((dog) => (
-          <li key={dog.id} onClick={() => handleClick(dog.id)}>
-            <h2>{dog.name}</h2>
-            <p>{dog.breed}</p>
-            <img src={dog.imageUrl} alt={dog.name} />
+          <li
+            key={dog.name}
+            className={`py-2 m-2 ${
+              dog.id === selectedDogId ? "bg-gray-200" : "bg-gray-100"
+            }`}
+            onClick={() => handleClick(dog.id)}
+          >
+            <h2 className="text-lg font-semibold">{dog.name}</h2>
+            <p className="text-sm">{dog.description}</p>
+            <p>
+              <Image
+                src={dog.imageUrl}
+                alt={dog.name}
+                width={360}
+                height={180}
+              />
+            </p>
           </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 }
