@@ -1,16 +1,15 @@
 "use client";
 
-import dogsJson from "./dogs.json"; // dogsJson is an array of objects
-import Image from "next/image";
+import dogsJson from "./dogs.json"; // Import the JSON file with the data and is automatically parsed into a JavaScript array. Easy peasy!
 import { useState } from "react";
 
 export default function Page() {
-  const [selectedDogId, setSelectedDogId] = useState(-1);
+  const [selectedDogId, setSelectedDogId] = useState(-1); // Create a state variable to keep track of the selected dog. Initially, it's -1.
+  let dogs = [...dogsJson]; // Spread the array to make a copy of it
 
-  let dogs = [...dogsJson]; // shallow copy of dogsJson
-  dogs.sort((a, b) => a.name.localeCompare(b.name)); // sort by name
+  dogs.sort((a, b) => a.name.localeCompare(b.name)); // Sort the array of dogs by name. This is done in place, so no need to reassign the variable. Array is mutated.
 
-  dogs = dogs.filter((dog) => dog.name.length > 5); // filter by name length
+  dogs = dogs.filter((dog) => dog.id !== 2); // remove the bad dog from the array.
 
   const handleClick = (id) => {
     if (selectedDogId === id) {
@@ -21,28 +20,27 @@ export default function Page() {
   };
 
   return (
-    <main className="p-2">
-      <h1 className="text-2xl font-semibold">Week 6</h1>
-      <p>Current id: {selectedDogId}</p>
+    <main className="m-4">
+      <h1 className="text-4xl bold">Week 6</h1>
+      <p>Selected dog id: {selectedDogId}</p>
       <ul>
         {dogs.map((dog) => (
           <li
-            key={dog.name}
-            className={`py-2 m-2 ${
-              dog.id === selectedDogId ? "bg-gray-200" : "bg-gray-100"
-            }`}
+            key={dog.id}
             onClick={() => handleClick(dog.id)}
+            className={`flex items-center space-x-4 w-1/2 ${
+              dog.id === selectedDogId ? "bg-gray-200" : ""
+            }`}
           >
-            <h2 className="text-lg font-semibold">{dog.name}</h2>
-            <p className="text-sm">{dog.description}</p>
-            <p>
-              <Image
-                src={dog.imageUrl}
-                alt={dog.name}
-                width={360}
-                height={180}
-              />
-            </p>
+            <img
+              src={dog.imageUrl}
+              alt={dog.name}
+              className="w-24 h-24 object-cover rounded-full"
+            />
+            <div>
+              <h2 className="text-2xl">{dog.name}</h2>
+              <p>{dog.description}</p>
+            </div>
           </li>
         ))}
       </ul>

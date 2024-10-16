@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "name": "Fluff",
-    "age": 3
+    "name": "Buddy",
+    "age": 4
   },
   {
     "id": 2,
-    "name": "Muffin",
+    "name": "Max",
     "age": 2
   },
   {
     "id": 3,
-    "name": "Puff",
-    "age": 1
+    "name": "Charlie",
+    "age": 5
   }
 ]

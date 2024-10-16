@@ -6,18 +6,17 @@ export default function DogForm({ onAddDog }) {
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
 
-  const handleSubmit = (event) => {
+  function handleSubmit(event) {
     event.preventDefault();
+    // TODO generate an id
     const newId = Math.floor(Math.random() * 1000000);
     const newDog = { id: newId, name, age };
     onAddDog(newDog);
-    setName("");
-    setAge(0);
-  };
+  }
 
   return (
     <div>
-      <h2 className="text-2xl">Add Dog</h2>
+      <h2>Add Dog</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
@@ -35,7 +34,7 @@ export default function DogForm({ onAddDog }) {
             type="number"
             id="age"
             value={age}
-            onChange={(event) => setAge(parseInt(event.target.value))}
+            onChange={(event) => setAge(event.target.value)}
             className="text-black"
           />
         </div>

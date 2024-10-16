@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
-    "name": "Shnukems",
-    "description": "Adorable",
+    "name": "Max",
+    "description": "Max is a good dog.",
     "imageUrl": "/images/dog1.jpg"
   },
   {
     "id": 2,
-    "name": "Blackie",
-    "description": "Cute",
+    "name": "Bully",
+    "description": "Bully is a bad dog.",
     "imageUrl": "/images/dog2.jpg"
   },
   {
     "id": 3,
-    "name": "Licky",
-    "description": "Friendly",
+    "name": "Rex",
+    "description": "Rex is a dog who thinks he's smart.",
     "imageUrl": "/images/dog3.jpg"
   }
 ]
