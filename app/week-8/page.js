@@ -2,74 +2,57 @@
 
 import { useState, useEffect } from "react";
 
-const getRandomDog = async () => {
-  const response = await fetch("https://dog.ceo/api/breeds/image/random");
-  const data = await response.json();
-  return data.message;
-};
-
-const getDogBreeds = async () => {
-  const response = await fetch("https://dog.ceo/api/breeds/list/all");
-  const data = await response.json();
-  return Object.keys(data.message); // Object.keys returns an array of the object's keys
-};
-
-const getBreedImage = async (breed) => {
-  const response = await fetch(
-    `https://dog.ceo/api/breed/${breed}/images/random`
-  );
-  const data = await response.json();
-  console.log(data);
-  return data.message;
-};
-
 export default function Page() {
-  const [dogUrl, setDogUrl] = useState(null);
-  const [breeds, setBreeds] = useState([]);
+  const [randomDogUrl, setRandomDogUrl] = useState(null);
+  const [dogBreeds, setDogBreeds] = useState([]);
   const [selectedBreed, setSelectedBreed] = useState("");
 
-  const loadRandomDog = async () => {
-    const url = await getRandomDog();
-    setDogUrl(url);
+  const getRandomDog = async (breed) => {
+    const response = breed
+      ? await fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
+      : await fetch("https://dog.ceo/api/breeds/image/random");
+    const data = await response.json();
+    // const data = response.json(); // this is a promise and not the actual data
+    const url = data.message;
+    setRandomDogUrl(url);
   };
 
-  const loadBreeds = async () => {
-    const breeds = await getDogBreeds();
-    setBreeds(breeds);
+  const getDogBreeds = async () => {
+    const response = await fetch("https://dog.ceo/api/breeds/list/all");
+    const data = await response.json();
+    const breeds = Object.keys(data.message); // Object.keys returns an array of the object's keys
+    setDogBreeds(breeds);
   };
 
-  const loadBreedImage = async (breed) => {
-    const breedImage = await getBreedImage(breed);
-
-    setDogUrl(breedImage);
+  const handleBreedChange = (event) => {
+    setSelectedBreed(event.target.value);
   };
 
   useEffect(() => {
-    loadRandomDog();
-    loadBreeds();
-  }, []); // [] means this effect will only run once, after the first render
+    getRandomDog();
+    getDogBreeds();
+  }, []); // empty array means run once
 
   useEffect(() => {
     if (selectedBreed === "") return;
-    loadBreedImage(selectedBreed);
-  }, [selectedBreed]);
+    getRandomDog(selectedBreed);
+  }, [selectedBreed]); // run when selectedBreed changes
 
   return (
-    <main>
-      <h1>Week 7</h1>
-      <p>Random dog</p>
-      <img src={dogUrl} alt="Random dog" />
-      <select
-        className="text-black"
-        value={selectedBreed}
-        onChange={(e) => setSelectedBreed(e.target.value)}
-      >
-        {breeds.map((breed) => (
-          <option key={breed} value={breed}>
-            {breed}
-          </option>
-        ))}
-      </select>
-    </main>
+    <div>
+      <h1>Week 8</h1>
+      <div>
+        <select onChange={handleBreedChange}>
+          {dogBreeds.map((breed) => (
+            <option key={breed} value={breed}>
+              {breed}
+            </option>
+          ))}
+        </select>
+      </div>
+      <p>
+        <img src={randomDogUrl} />
+      </p>
+    </div>
   );
 }

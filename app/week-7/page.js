@@ -8,20 +8,18 @@ import { useState } from "react";
 export default function Page() {
   const [dogs, setDogs] = useState(dogData);
 
-  const handleAddDog = (newDog) => {
-    setDogs([...dogs, newDog]);
+  const handleAddDog = (dog) => {
+    setDogs([...dogs, dog]); // add dog to dogs array, spread operator to create new array, dog is the new dog, dogs is the old array
   };
 
-  const handleDelete = (id) => {
-    const updatedDogs = dogs.filter((dog) => dog.id !== id);
-    setDogs(updatedDogs);
+  const handleDeleteDog = (id) => {
+    setDogs(dogs.filter((dog) => dog.id !== id)); // filter out the dog with the id
   };
 
   return (
     <div>
-      <h1>Week 7</h1>
-
-      <DogList dogs={dogs} onDelete={handleDelete} />
+      <h1>My App</h1>
+      <DogList dogs={dogs} onDeleteDog={handleDeleteDog} />
       <DogForm onAddDog={handleAddDog} />
     </div>
   );
