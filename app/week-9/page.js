@@ -7,19 +7,28 @@ export default function Page() {
 
   console.log(user);
 
+  const login = async () => {
+    await gitHubSignIn();
+  };
+
+  const logout = async () => {
+    await firebaseSignOut();
+  };
+
   return (
-    <div>
-      <h1>Week 8</h1>
-      <p>{user ? "Hi there!" : "Please sign in"}</p>
-      <p>{user?.email}</p>
-      {user && user.displayName}
-      <p>
+    <main>
+      <h1>Week 9 Demo</h1>
+      <div>
         {user ? (
-          <button onClick={firebaseSignOut}>Sign Out</button>
+          <div>
+            <p>Welcome, {user.displayName}!</p>
+            <p>I know your email address. It is {user.email}.</p>
+            <button onClick={logout}>Logout</button>
+          </div>
         ) : (
-          <button onClick={gitHubSignIn}>Sign In with GitHub</button>
+          <button onClick={login}>Login with GitHub</button>
         )}
-      </p>
-    </div>
+      </div>
+    </main>
   );
 }

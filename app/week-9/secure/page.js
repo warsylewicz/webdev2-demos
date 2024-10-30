@@ -3,16 +3,21 @@
 import { useUserAuth } from "../_utils/auth-context";
 
 export default function Page() {
-  const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
+  const { user } = useUserAuth();
 
   if (!user) {
-    return <p>Go away!</p>;
+    return (
+      <main>
+        <h1>Week 9 Demo</h1>
+        <p>You must be logged in to view this page.</p>
+      </main>
+    );
   }
 
   return (
-    <div>
-      <h1>Week 8</h1>
-      <p>Hi!</p>
-    </div>
+    <main>
+      <h1>Week 9 Demo</h1>
+      <p>This is a secure page. Welcome!</p>
+    </main>
   );
 }

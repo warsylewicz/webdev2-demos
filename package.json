@@ -11,10 +11,10 @@
   "dependencies": {
     "@neondatabase/serverless": "^0.9.3",
     "autoprefixer": "latest",
-    "encoding": "latest",
+    "encoding": "^0.1.13",
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "firebase": "latest",
+    "firebase": "^11.0.1",
     "next": "latest",
     "postcss": "latest",
     "react": "latest",
