@@ -9,7 +9,8 @@ export default function Page({ params }) {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const post = await getBlogPost(params.id);
+      const { id } = await params;
+      const post = await getBlogPost(id);
       setPost(post);
       setLoading(false);
     };
@@ -22,7 +23,7 @@ export default function Page({ params }) {
         <div>Loading...</div>
       ) : (
         <div>
-          <h1 className="text-4xl font-bold m-6 text-center text-yellow-300">
+          <h1 className="text-4xl font-bold m-6 text-center text-blue-700">
             {post.title}
           </h1>
           <div className="text-xl m-6">{post.content}</div>

@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^0.9.3",
     "autoprefixer": "latest",
     "encoding": "^0.1.13",
     "eslint": "latest",

@@ -5,30 +5,26 @@ import { useUserAuth } from "./_utils/auth-context";
 export default function Page() {
   const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
 
-  console.log(user);
-
-  const login = async () => {
+  const handleSignIn = async () => {
     await gitHubSignIn();
   };
 
-  const logout = async () => {
+  const handleSignOut = async () => {
     await firebaseSignOut();
   };
 
+  console.log(user);
+
   return (
-    <main>
-      <h1>Week 9 Demo</h1>
-      <div>
-        {user ? (
-          <div>
-            <p>Welcome, {user.displayName}!</p>
-            <p>I know your email address. It is {user.email}.</p>
-            <button onClick={logout}>Logout</button>
-          </div>
-        ) : (
-          <button onClick={login}>Login with GitHub</button>
-        )}
-      </div>
-    </main>
+    <div>
+      <h1>Week 9</h1>
+      <p>{user && user.displayName}</p>
+      <p>{user && user.email}</p>
+      {user ? (
+        <button onClick={handleSignOut}>Sign Out</button>
+      ) : (
+        <button onClick={handleSignIn}>Sign In</button>
+      )}
+    </div>
   );
 }

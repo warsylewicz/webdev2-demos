@@ -26,14 +26,20 @@ export default function Page() {
       ) : (
         <button onClick={gitHubSignIn}>Sign In</button>
       )}
-      <div>
-        {posts &&
-          posts.map((post) => (
-            <div key={post.id} className="text-blue-300 hover:underline">
-              <Link href={`/week-10/${post.id}`}>{post.title}</Link>
-            </div>
-          ))}
-      </div>
+      <section>
+        <h2 className="text-2xl">Week 10 Blog Posts</h2>
+        <ul>
+          {posts &&
+            posts.map((post) => (
+              <li
+                key={post.id}
+                className="m-4 list-disc text-blue-600 hover:underline"
+              >
+                <Link href={`/week-10/${post.id}`}>{post.title}</Link>
+              </li>
+            ))}
+        </ul>
+      </section>
     </main>
   );
 }

@@ -6,18 +6,13 @@ export default function Page() {
   const { user } = useUserAuth();
 
   if (!user) {
-    return (
-      <main>
-        <h1>Week 9 Demo</h1>
-        <p>You must be logged in to view this page.</p>
-      </main>
-    );
+    return <div>Unauthorized</div>;
   }
 
   return (
-    <main>
-      <h1>Week 9 Demo</h1>
-      <p>This is a secure page. Welcome!</p>
-    </main>
+    <div>
+      <h1>Week 9</h1>
+      <p>Secure page</p>
+    </div>
   );
 }
