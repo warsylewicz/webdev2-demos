@@ -35,12 +35,14 @@ export const getBlogPosts = async () => {
     const blogPostsCollectionRef = collection(db, "blog-posts");
     const blogPostsSnapshot = await getDocs(blogPostsCollectionRef);
 
+    // Example of using a query to filter blog posts.
     // const blogPostsQuery = query(
     //   blogPostsCollectionRef,
     //   where("published", "==", true)
     // );
     // const blogPostsSnapshot = await getDocs(blogPostsQuery);
 
+    // Question: what is the code below doing?
     const mappedBlogPosts = blogPostsSnapshot.docs.map((postDoc) => ({
       id: postDoc.id,
       ...postDoc.data(),
