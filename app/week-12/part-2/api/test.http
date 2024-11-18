@@ -1,38 +1,38 @@
-GET http://localhost:3000/week-11/part-2/api/users
+GET http://localhost:3000/week-12/part-2/api/dogs
 
 ###
 
-GET http://localhost:3000/week-11/part-2/api/users/1
+GET http://localhost:3000/week-12/part-2/api/dogs/1
 
 ###
 
-POST http://localhost:3000/week-11/part-2/api/users HTTP/1.1
+POST http://localhost:3000/week-12/part-2/api/dogs HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Carl",
-    "age": 25
+    "name": "Jake",
+    "age": 8
 }
 
 ###
 
-PUT http://localhost:3000/week-11/part-2/api/users/2 HTTP/1.1
+PUT http://localhost:3000/week-12/part-2/api/dogs/1 HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Bobby",
-    "age": 31
+    "name": "Luna the Dog",
+    "age": 5
 }
 
 ###
 
-PATCH http://localhost:3000/week-11/part-2/api/users/2 HTTP/1.1
+PATCH http://localhost:3000/week-12/part-2/api/dogs/1 HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Bobby"
+    "name": "Just Luna"
 }
 
 ###
 
-DELETE http://localhost:3000/week-11/part-2/api/users/1 HTTP/1.1
+DELETE http://localhost:3000/week-12/part-2/api/dogs/1 HTTP/1.1

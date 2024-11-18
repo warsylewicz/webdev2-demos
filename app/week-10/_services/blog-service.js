@@ -22,7 +22,7 @@ export const getBlogPost = async (id) => {
       const post = { id: docSnap.id, ...docSnap.data() };
       return post;
     } else {
-      return null;
+      return { id: null, title: "Post not found", content: "Post not found" };
     }
   } catch (error) {
     console.error("Error in getBlogPost: ", error);
