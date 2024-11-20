@@ -6,7 +6,7 @@ export default async function Page() {
 
   return (
     <main>
-      <h1>Week 11 Part 1</h1>
+      <h1>Week 12 Part 1</h1>
       <p>{data}</p>
       <img src={data} alt="random" />
     </main>

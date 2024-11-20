@@ -12,7 +12,7 @@ export async function GET(request, { params }) {
   const dog = dogs.find((dog) => dog.id === idNum);
 
   if (!dog) {
-    return new Response(null, { status: 404 });
+    return new Response("wrong id", { status: 404 });
   }
 
   console.log(`fetch dog ${id}`);
