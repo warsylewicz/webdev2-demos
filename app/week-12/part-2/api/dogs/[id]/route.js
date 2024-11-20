@@ -1,9 +1,10 @@
 // fetch one dog
+// GET /api/dogs/:id
 export async function GET(request, { params }) {
   const { id } = await params; // params is a promise
   const idNum = Number(id); // all params are strings
 
-  // SELECT * FROM dogs where id=${id}`;
+  // SELECT * FROM dogs where id=${idNum}`;
   const dogs = [
     { id: 1, name: "Luna", age: 2 },
     { id: 2, name: "Max", age: 4 },
@@ -57,7 +58,7 @@ export async function DELETE(request, { params }) {
   const idNum = Number(id);
 
   // delete dog in database
-  // DELETE FROM dogs WHERE id = ${id}
+  // DELETE FROM dogs WHERE id = ${idNum}
 
   console.log(`delete dog ${idNum}`);
   return new Response(null, { status: 204 });

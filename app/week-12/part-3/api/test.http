@@ -3,6 +3,6 @@ POST http://localhost:3000/week-12/part-3/api HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Carl",
-    "age": 30
+    "name": "Jake",
+    "age": 8
 }

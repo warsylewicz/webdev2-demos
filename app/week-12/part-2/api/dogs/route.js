@@ -1,4 +1,5 @@
 // fetch list of dogs
+// GET request for /api/dogs
 export async function GET() {
   // fetch dogs from database
   // SELECT * FROM dogs
@@ -12,6 +13,7 @@ export async function GET() {
 }
 
 // create a new dog
+// POST request for /api/dogs
 export async function POST(request) {
   const newDog = await request.json();
 

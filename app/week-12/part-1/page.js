@@ -8,6 +8,7 @@ export default async function Page() {
     <main>
       <h1>Week 11 Part 1</h1>
       <p>{data}</p>
+      <img src={data} alt="random" />
     </main>
   );
 }
