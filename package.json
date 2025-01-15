@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
     "autoprefixer": "latest",
+    "dotenv": "^16.4.5",
     "encoding": "^0.1.13",
     "eslint": "latest",
     "eslint-config-next": "latest",
