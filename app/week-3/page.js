@@ -1,30 +1,31 @@
 import Dog from "./dog";
 
 export default function Page() {
-  const dog1 = {
-    name: "Lloyd",
+  let dog1 = {
+    name: "Fido",
     age: 3,
-    breed: "Dalmation",
-    color: "white/black",
+    breed: "Golden Retriever",
+    color: "Golden",
   };
 
-  const dog2 = {
+  let dog2 = {
     name: "Rex",
-    age: 2,
+    age: 5,
     breed: "German Shepherd",
-    color: "black/brown",
+    color: "Black and Brown",
   };
 
-  const dog3 = {
-    name: "Bella",
-    age: 4,
-    breed: "Poodle",
-    color: "white",
+  let dog3 = {
+    name: "Lassie",
+    age: 2,
+    breed: "Collie",
+    color: "White and Brown",
   };
 
   return (
     <main>
-      <h1 className="text-3xl font-bold">Meet the Dogs</h1>
+      <h1>Week 3 Demo</h1>
+      <h2>Meet the Dogs</h2>
       <Dog
         name={dog1.name}
         age={dog1.age}
