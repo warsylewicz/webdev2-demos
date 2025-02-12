@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
-    "name": "Max",
-    "description": "Max is a good dog.",
+    "name": "Buddy",
+    "description": "Buddy is a 3 year old Golden Retriever. He loves to play fetch and go on long walks.",
     "imageUrl": "/images/dog1.jpg"
   },
   {
     "id": 2,
-    "name": "Bully",
-    "description": "Bully is a bad dog.",
+    "name": "Frank",
+    "description": "Frank is a 2 year old some kinda dog. He loves to play fetch and go on long walks.",
     "imageUrl": "/images/dog2.jpg"
   },
   {
     "id": 3,
-    "name": "Rex",
-    "description": "Rex is a dog who thinks he's smart.",
+    "name": "Daisy",
+    "description": "Daisy is a 4 year old pug. She doesn't like to play fetch but loves to go on long walks.",
     "imageUrl": "/images/dog3.jpg"
   }
 ]
