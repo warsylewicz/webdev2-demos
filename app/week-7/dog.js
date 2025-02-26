@@ -1,10 +1,9 @@
-export default function Dog({ id, name, age, onDeleteDog }) {
+export default function Dog({ id, name, age, onDelete }) {
   return (
     <div>
-      <p>
-        {name} is {age} years old.
-      </p>
-      <button onClick={() => onDeleteDog(id)}>Delete</button>
+      <h2>{name}</h2>
+      <p>Age: {age}</p>
+      <button onClick={() => onDelete(id)}>Delete</button>
     </div>
   );
 }

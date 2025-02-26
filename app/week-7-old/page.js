@@ -2,26 +2,25 @@
 
 import DogList from "./dog-list.js";
 import DogForm from "./dog-form.js";
-import dogData from "./dogs.json";
+import dogData from "./dog-data.json";
 import { useState } from "react";
 
 export default function Page() {
   const [dogs, setDogs] = useState(dogData);
 
   const handleAddDog = (dog) => {
-    // we cannot mutate the state directly, e.g. dogs.push(dog)
-    setDogs([...dogs, dog]); // Add the new dog to the list of dogs
+    setDogs([...dogs, dog]); // add dog to dogs array, spread operator to create new array, dog is the new dog, dogs is the old array
   };
 
   const handleDeleteDog = (id) => {
-    setDogs(dogs.filter((dog) => dog.id !== id)); // Remove the dog with the given id
+    setDogs(dogs.filter((dog) => dog.id !== id)); // filter out the dog with the id
   };
 
   return (
     <div>
-      <h1>Dog Management</h1>
-      <DogForm onAddDog={handleAddDog} />
+      <h1>My App</h1>
       <DogList dogs={dogs} onDeleteDog={handleDeleteDog} />
+      <DogForm onAddDog={handleAddDog} />
     </div>
   );
 }

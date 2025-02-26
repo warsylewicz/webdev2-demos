@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function Counter() {
-  const [person, setPerson] = useState({ name: "Alice", age: 25 });
+  const [person, setPerson] = useState({ name: "Mario", age: 30 });
 
   const increment = () => {
     setPerson({ ...person, age: person.age + 1 });
@@ -12,7 +12,7 @@ export default function Counter() {
   return (
     <div>
       <h2>Counter</h2>
-      <p>Age: {person.age}</p>
+      <p>count: {person.age}</p>
       <button onClick={increment}>Increment</button>
     </div>
   );

@@ -10,7 +10,7 @@ export default function DogList({ dogs, onDeleteDog }) {
           id={dog.id}
           name={dog.name}
           age={dog.age}
-          onDelete={onDeleteDog}
+          onDeleteDog={onDeleteDog}
         />
       ))}
     </div>
