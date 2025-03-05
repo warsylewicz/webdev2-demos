@@ -1,9 +1,9 @@
-import Dog from "./dog.js";
+import Dog from "./dog";
 
 export default function DogList({ dogs, onDeleteDog }) {
   return (
     <div>
-      <h2>Dog List</h2>
+      <h2>Dogs</h2>
       {dogs.map((dog) => (
         <Dog
           key={dog.id}

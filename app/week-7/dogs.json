@@ -1,5 +1,17 @@
 [
-  { "id": 1, "name": "Buddy", "age": 4 },
-  { "id": 2, "name": "Molly", "age": 7 },
-  { "id": 3, "name": "Max", "age": 2 }
+  {
+    "id": 1,
+    "name": "Buddy",
+    "age": 5
+  },
+  {
+    "id": 2,
+    "name": "Molly",
+    "age": 3
+  },
+  {
+    "id": 3,
+    "name": "Max",
+    "age": 4
+  }
 ]
