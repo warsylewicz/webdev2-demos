@@ -38,5 +38,5 @@ export const AuthContextProvider = ({ children }) => {
 };
 
 export const useUserAuth = () => {
-  return useContext(AuthContext);
+  return useContext(AuthContext); // { user, gitHubSignIn, firebaseSignOut }
 };

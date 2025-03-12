@@ -15,7 +15,7 @@
     "encoding": "^0.1.13",
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "firebase": "^11.0.1",
+    "firebase": "^11.4.0",
     "next": "latest",
     "postcss": "latest",
     "react": "latest",
