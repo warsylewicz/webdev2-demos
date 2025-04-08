@@ -4,5 +4,6 @@ content-type: application/json
 
 {
     "name": "Jake",
-    "age": 8
+    "age": 1,
+    "address": "123 Main St"
 }

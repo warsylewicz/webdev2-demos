@@ -18,6 +18,7 @@ export async function POST(request) {
     return new Response("Invalid request body", { status: 400 });
   }
 
+  // newDog only has name and age properties and nothing else
   const newDog = {
     name: newDogData.name,
     age: newDogData.age,

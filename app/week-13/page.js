@@ -104,7 +104,7 @@ export default function Page() {
             <input
               type="text"
               className="border border-gray-800 text-black"
-              value={selectedUser.name}
+              value={selectedUser?.name ?? ""}
               onChange={(e) =>
                 setSelectedUser({ ...selectedUser, name: e.target.value })
               }
@@ -115,7 +115,7 @@ export default function Page() {
             <input
               type="email"
               className="border border-gray-800 text-black"
-              value={selectedUser.email}
+              value={selectedUser?.email ?? ""}
               onChange={(e) =>
                 setSelectedUser({ ...selectedUser, email: e.target.value })
               }
